@@ -7,7 +7,11 @@ Today I want to talk about how to import data in R
 
 But before learning how to import data, let's getting familiar with R and Rstudio.
 
+Let's check three things:
 
+(1) R and Rstudio have already downloaded
+(2) You have already download my Data Files
+(3) You know the path you download data files
 ```{r}
 plot(cars)
 ```

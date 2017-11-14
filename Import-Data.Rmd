@@ -1,34 +1,81 @@
 ---
-title: "Lecture01_Import_Data"
+title: "Lecture01: Import Data to R"
 author: "Jihong Zhang"
 date: "November 13, 2017"
 output: 
   ioslides_presentation:
     incremental: true
     smaller: true 
+    transition: faster
+    css: styles.css
+    mathjax: "http://example.com/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+    widescreen: true
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+## Checking Your Data {#nextsteps .smaller .build}
 
-This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+<div class="red3">
+The first thing is check your data
+</div>
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
+- Your data file type
+- Your data save path
 
-## Slide with Bullets
+You can also highlight R codes:
+```{r}
+### <b>
+x <- 10
+y <- x * 2
+### </b>
+```
+
+## Preparing Your R Workspace {#nextsteps .emphasized}
+
+<div class="red3">
+You should always set up your workspace to your working directory first.
+</div>
+
+For example, I want to set up my R workspace to dropbox
+```{r ,echo=TRUE}
+setwd("G:/Dropbox/") # absolute path
+getwd() # get your Workspace now
+```
+
+You can use the function below to check whether you set up workspace correctly.
+```{r ,echo=TRUE}
+list.files()
+```
+
+You shall see your data files in the output above.
+
+
+## Read CSV Files into R  | This is a subtitle
+
+In this class, you usually are dealling with **CSV** file.
+
+```{r , eval=FALSE}
+library(magrittr)
+col1 <- paste(1:5, collapse = ",")
+col2 <- paste(1:5, collapse = ",")%>% as.data.frame()
+col3 <- paste(1:5, collapse = ",")%>% as.data.frame()
+Reduce(list(col1, col2, col3), rbind)
+```
 
 - Bullet 1
 - Bullet 2
 - Bullet 3
+
 
 ## Slide with R Output
 
 ```{r cars, echo = TRUE}
 summary(cars)
 ```
+
 
 ## Slide with Plot
 

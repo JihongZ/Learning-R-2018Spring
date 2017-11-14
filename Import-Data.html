@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Lecture01_Import_Data</title>
+  <title>Lecture01: Import Data to R</title>
 
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -21,7 +21,7 @@
     var SLIDE_CONFIG = {
       // Slide settings
       settings: {
-                title: 'Lecture01_Import_Data',
+                title: 'Lecture01: Import Data to R',
                         useBuilds: true,
         usePrettify: true,
         enableSlideAreas: true,
@@ -64,29 +64,30 @@
     }
 
     slides > slide {
-      -webkit-transition: all 0.4s ease-in-out;
-      -moz-transition: all 0.4s ease-in-out;
-      -o-transition: all 0.4s ease-in-out;
-      transition: all 0.4s ease-in-out;
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
     }
 
     .auto-fadein {
       -webkit-transition: opacity 0.6s ease-in;
-      -webkit-transition-delay: 0.4s;
-      -moz-transition: opacity 0.6s ease-in 0.4s;
-      -o-transition: opacity 0.6s ease-in 0.4s;
-      transition: opacity 0.6s ease-in 0.4s;
+      -webkit-transition-delay: 0.2s;
+      -moz-transition: opacity 0.6s ease-in 0.2s;
+      -o-transition: opacity 0.6s ease-in 0.2s;
+      transition: opacity 0.6s ease-in 0.2s;
       opacity: 0;
     }
 
   </style>
 
+  <link href="data:text/css;charset=utf-8,%23nextsteps%20%7B%0Acolor%3A%20lightblue4%3B%0A%7D%0A%2Eemphasized%20%7B%0Afont%2Dsize%3A%201%2E2em%3B%0A%7D%0Aslides%20%3E%20slide%2Ebackdrop%20%7B%0Abackground%3A%20none%20%21important%3B%0Abackground%2Dcolor%3A%20lemonchiffon%20%21important%3B%0A%7D%0A%2Efooter%20%7B%0Acolor%3A%20black%3B%20background%3A%20%23E8E8E8%3B%0Aposition%3A%20fixed%3B%20top%3A%2090%25%3B%0Atext%2Dalign%3Acenter%3B%20width%3A100%25%3B%0A%7D%0A" rel="stylesheet" type="text/css" />
 
 </head>
 
 <body style="opacity: 0">
 
-<slides>
+<slides class="layout-widescreen">
 
   <slide class="title-slide segue nobackground">
         <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
@@ -98,13 +99,56 @@
           </hgroup>
   </slide>
 
-<slide class=""><hgroup><h2>R Markdown</h2></hgroup><article  id="r-markdown" class="smaller ">
+<slide class=""><hgroup><h2>Checking Your Data</h2></hgroup><article  id="nextsteps" class="smaller smaller build">
 
-<p>This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href='http://rmarkdown.rstudio.com' title=''>http://rmarkdown.rstudio.com</a>.</p>
+<div class="red3">
+<p>The first thing is check your data</p></div>
 
-<p>When you click the <strong>Knit</strong> button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.</p>
+<ul class = 'build'>
+<li>Your data file type</li>
+<li>Your data save path</li>
+</ul>
 
-</article></slide><slide class=""><hgroup><h2>Slide with Bullets</h2></hgroup><article  id="slide-with-bullets" class="smaller ">
+<p>You can also highlight R codes:</p>
+
+<pre class = 'prettyprint lang-r'><b>x &lt;- 10
+y &lt;- x * 2
+</b></pre>
+
+<div class="footer">
+<p>I am a footer</p></div>
+
+</article></slide><slide class=""><hgroup><h2>Preparing Your R Workspace</h2></hgroup><article  id="nextsteps" class="smaller emphasized">
+
+<div class="red3">
+<p>You should always set up your workspace to your working directory first.</p></div>
+
+<p>For example, I want to set up my R workspace to dropbox</p>
+
+<pre class = 'prettyprint lang-r'>setwd(&quot;G:/Dropbox/&quot;) # absolute path
+getwd() # get your Workspace now</pre>
+
+<pre >## [1] &quot;G:/Dropbox&quot;</pre>
+
+<p>You can use the function below to check whether you set up workspace correctly.</p>
+
+<pre class = 'prettyprint lang-r'>list.files()</pre>
+
+<pre >## [1] &quot;Import-Data.html&quot;            &quot;Import-Data.md&quot;             
+## [3] &quot;Import-Data.Rmd&quot;             &quot;Learning-R-2018Spring.Rproj&quot;
+## [5] &quot;README.md&quot;                   &quot;styles.css&quot;</pre>
+
+<p>You shall see your data files in the output above.</p>
+
+</article></slide><slide class=""><hgroup><h2>Read CSV Files into R </h2><h3> This is a subtitle</h3></hgroup><article  id="read-csv-files-into-r-this-is-a-subtitle" class="smaller ">
+
+<p>In this class, you usually are dealling with <strong>CSV</strong> file.</p>
+
+<pre class = 'prettyprint lang-r'>library(magrittr)
+col1 &lt;- paste(1:5, collapse = &quot;,&quot;)
+col2 &lt;- paste(1:5, collapse = &quot;,&quot;)%&gt;% as.data.frame()
+col3 &lt;- paste(1:5, collapse = &quot;,&quot;)%&gt;% as.data.frame()
+Reduce(list(col1, col2, col3), rbind)</pre>
 
 <ul class = 'build'>
 <li>Bullet 1</li>
@@ -140,7 +184,7 @@
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "http://example.com/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>

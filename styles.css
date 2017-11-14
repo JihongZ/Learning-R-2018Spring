@@ -1,0 +1,20 @@
+#nextsteps {
+   color: lightblue4;
+}
+
+.emphasized {
+   font-size: 1.2em;
+}
+
+slides > slide.backdrop {
+  background: none !important;
+  background-color: lemonchiffon !important;
+}
+
+.footer {
+    color: black; background: #E8E8E8;
+    position: fixed; top: 90%;
+    text-align:center; width:100%;
+}
+
+
